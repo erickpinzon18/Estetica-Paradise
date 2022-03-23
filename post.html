@@ -122,6 +122,7 @@ body {
     <body onload="onLoad();">
 
       <script>
+        
 
         function onLoad() {
           var act = document.getElementById('sign');
@@ -215,12 +216,45 @@ body {
                         document.getElementById("verMetodo").value = "Metodo de pago: Otros";
                       }
         }
+
+        function login() {
+        let user = ["loko", "cliente"];
+        let pass = ["loko", "cliente"];
+        let tipo = ["a", "c"]
+          var error = "";
+          var i = 0;
+          var passLogin = document.getElementById("user").value;
+          for (i = 0; i<=user.length-1; i++) {
+            console.log(user[i]);
+            if(user[i] == document.getElementById("user").value) {
+              console.log(user[i] == document.getElementById("user").value);
+              alert("user escrita: "+passLogin);
+              if (pass[i] == passLogin) {
+                //Login dependiendo del tipo de usuario
+                if(tipo[i]=="a") {
+                  alert("Usuario de tipo administrador");
+                  ///document.getElementById("adminModalDef").click;
+                  break;
+                } else {
+                  alert("Usuario de tipo cliente");
+                  habilitar();
+                  break;
+                }
+              } else {
+                error = "Contraseña erronea";
+              }
+            } else {
+              error = "Usuario Inexistente";
+            }
+          }
+          alert(error);
+        }
       </script>
 
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.html">PARADISE</a>
+              <img alt="image" src="src/LogoLet.png" height="40">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menú
                     <i class="fas fa-bars"></i>
@@ -275,22 +309,24 @@ body {
                     <div class="input-group mb-3">
 
                       <span class="input-group-text"> <i class="fa fa-user"></i>
-                      </span><input name="" class="form-control" placeholder="Email or login" type="email">
+                      </span><input id="user" class="form-control" placeholder="Email or login" type="text">
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="input-group mb-3">
 
                       <span class="input-group-text"> <i class="fa fa-lock"></i>
-                      </span><input class="form-control" placeholder="******" type="password">
+                      </span><input id="password" class="form-control" placeholder="******" type="password">
                     </div>
                   </div>
                   <script>
                     
                   </script>
                   <div class="form-group">
-                    <button data-dismiss="modal" class="btn btn-primary w-100" style="display: block;" onclick="habilitar()">
-                      Iniciar Sesion
+                    <button href="#myModalAdmin" data-dismiss="modal" class="trigger-btn" data-toggle="modal" style="display: none;" id="adminModal">Se dara click automaticamente</button>
+                    <button href="#myModalAdmin1" data-dismiss="modal" class="trigger-btn" data-toggle="modal" style="display: none;" id="adminModalDef">Se dara click automaticamente</button>
+                    <button onclick="login()" class="btn btn-primary w-100" style="display: block;">
+                      Iniciar Sesionota
                     </button>
                   </div>
                   <p class="text-center">
@@ -301,6 +337,27 @@ body {
             </div>
           </div>
         </div>    
+
+        <div class="text-center">
+          <!-- Button HTML (to Trigger Modal) -->
+        </div>
+        
+        <!-- Modal HTML -->
+        <div id="myModalAdmin1" class="modal fade">
+          <div class="modal-dialog modal-confirm" style="background-color: #fff;">
+            <div class="modal-content">
+              <article class="card-body">
+                <h2 class="card-title text-center mb-4 mt-1 fw-bold">Modo Administrador
+                </h2>
+                <hr>
+                <p class="text-success text-center">Inicia sesion para continuar</p>
+                <form>
+                 
+                </form>
+              </article>
+            </div>
+          </div>
+        </div>
         
         <div class="text-center">
           <!-- Button HTML (to Trigger Modal) -->
