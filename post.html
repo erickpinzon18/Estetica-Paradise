@@ -1,3 +1,8 @@
+<?php 
+  include("connect.php");
+  $msj="";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -122,8 +127,6 @@ body {
     <body onload="onLoad();">
 
       <script>
-        
-
         function onLoad() {
           var act = document.getElementById('sign');
           act.click();
@@ -216,41 +219,7 @@ body {
                         document.getElementById("verMetodo").value = "Metodo de pago: Otros";
                       }
         }
-
-        function login() {
-        let user = ["loko", "cliente"];
-        let pass = ["loko", "cliente"];
-        let tipo = ["a", "c"]
-          var error = "";
-          var i = 0;
-          var passLogin = document.getElementById("user").value;
-          for (i = 0; i<=user.length-1; i++) {
-            console.log(user[i]);
-            if(user[i] == document.getElementById("user").value) {
-              console.log(user[i] == document.getElementById("user").value);
-              alert("user escrita: "+passLogin);
-              if (pass[i] == passLogin) {
-                //Login dependiendo del tipo de usuario
-                if(tipo[i]=="a") {
-                  alert("Usuario de tipo administrador");
-                  ///document.getElementById("adminModalDef").click;
-                  break;
-                } else {
-                  alert("Usuario de tipo cliente");
-                  habilitar();
-                  break;
-                }
-              } else {
-                error = "Contraseña erronea";
-              }
-            } else {
-              error = "Usuario Inexistente";
-            }
-          }
-          alert(error);
-        }
       </script>
-
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
             <div class="container px-4 px-lg-5">
@@ -292,7 +261,7 @@ body {
 
         <div class="text-center">
           <!-- Button HTML (to Trigger Modal) -->
-          <button href="#myModal" class="trigger-btn" data-toggle="modal" style="display: none;" id="sign">Se dara click automaticamente</button>
+          <button href="#myModal" class="trigger-btn" data-toggle="modal" style="display: block;" id="sign">Modal Login</button>
         </div>
         
         <!-- Modal HTML -->
@@ -304,19 +273,19 @@ body {
                 </h2>
                 <hr>
                 <p class="text-success text-center">Inicia sesion para continuar</p>
-                <form>
+                <form name="modalLogin" action="login.php" method="POST">
                   <div class="form-group">
                     <div class="input-group mb-3">
 
                       <span class="input-group-text"> <i class="fa fa-user"></i>
-                      </span><input id="user" class="form-control" placeholder="Email or login" type="text">
+                      </span><input id="user" class="form-control" placeholder="Email or login" name="user" type="text">
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="input-group mb-3">
 
                       <span class="input-group-text"> <i class="fa fa-lock"></i>
-                      </span><input id="password" class="form-control" placeholder="******" type="password">
+                      </span><input id="password" class="form-control" placeholder="******" name="password" type="password">
                     </div>
                   </div>
                   <script>
@@ -326,10 +295,14 @@ body {
                     <button href="#myModalAdmin" data-dismiss="modal" class="trigger-btn" data-toggle="modal" style="display: none;" id="adminModal">Se dara click automaticamente</button>
                     <button href="#myModalAdmin1" data-dismiss="modal" class="trigger-btn" data-toggle="modal" style="display: none;" id="adminModalDef">Se dara click automaticamente</button>
                     <button onclick="login()" class="btn btn-primary w-100" style="display: block;">
-                      Iniciar Sesionota
+                      Iniciar Sesion
                     </button>
+                    <input type="submit" name="btnLogin" class="btn btn-primary w-100">
                   </div>
                   <p class="text-center">
+                    <?php
+                      echo $msj;
+                    ?>
                     <a href="#myModalRegister" class="trigger-btn" data-dismiss="modal" data-toggle="modal">Registrarse</a>
                   </p>
                 </form>
