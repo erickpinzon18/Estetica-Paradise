@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  $usuario = $_SESSION['dev'];
+  $type = $_SESSION['type'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,22 +24,52 @@
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <img alt="image" src="src/LogoLet.png" height="40">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menú
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link  px-lg-3py-3 py-lg-4" href="index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="login.php">Generador de Citas</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">Galeria</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Acerca de</a></li>
+          <div class="container px-4 px-lg-5">
+              <img alt="image" src="assets/img/LogoLet.png" height="40">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                  Menú
+                  <i class="fas fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarResponsive">
+                  <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                      <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="indexView.php">Inicio</a></li>
+                      <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" 
+                          href=
+                          <?php
+                            if(isset($usuario)) {
+                              if($type == "admin") {
+                                echo '"indexView.php"';
+                              } else {
+                                echo '"generateView.php"';
+                              }
+                            } else {
+                              echo '"loginView.php"';
+                            }
+                          ?>
+                          >
+                            <?php
+                              if($type == "admin") {
+                                echo 'Administracion';
+                              } else {
+                                echo 'Generador de Citas';
+                              }
+                            ?>
+                          </a></li>
+                      <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="galleryView.php">Galeria</a></li>
+                      <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contactView.php">Acerca de</a></li>
                     </ul>
-                </div>
-            </div>
-        </nav>
+                    <form class="form-inline" method="POST" action="modules/logout.php">
+                    <?php
+                        if(isset($usuario)) {
+                          echo '<button class="btn btn-danger my-2 my-sm-0 btn-sm" style="display: block;" type="submit">LOG OUT</button>';
+                        } else {
+                          echo '<a class="btn btn-success my-2 my-sm-0 btn-sm" href="loginView.php">LOGIN</a>';
+                        }
+                      ?>
+                    </form>
+              </div>
+          </div>
+      </nav>
         <!-- Page Header-->
         <header class="masthead" style="background-image: url('https://images.unsplash.com/photo-1595475884562-073c30d45670?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=1200')">
             <div class="container position-relative px-4 px-lg-5">
@@ -41,7 +77,7 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
                           <center>
-                            <img alt="image" src="src/LogoOG.png" height="300">
+                            <img alt="image" src="assets/img/LogoOG.png" height="300">
                             <span class="subheading"><h3>El paraiso de tus sueños</h3></span>
                           </center>
                         </div>
@@ -294,7 +330,7 @@
           <div class="container">
             <div class="row text-center align-items-center">
               <div class="col-12 col-sm-6 col-md-4 text-sm-start">
-                <img alt="image" src="src/LogoIzq.png" height="50">
+                <img alt="image" src="assets/img/LogoIzq.png" height="50">
               </div>
               <div class="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0 text-center text-sm-end text-md-center">
                 © Todos los derechos reservados 2022

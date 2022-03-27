@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  $type = $_SESSION['type'];
+  $usuario = $_SESSION['dev'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,29 +24,59 @@
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-            <div class="container px-4 px-lg-5">
-              <img alt="image" src="src/LogoLet.png" height="40">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menú
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">Trabajos Realizados</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Generador de Citas</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Acerca de</a></li>
+          <div class="container px-4 px-lg-5">
+              <img alt="image" src="assets/img/LogoLet.png" height="40">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                  Menú
+                  <i class="fas fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarResponsive">
+                  <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                      <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="indexView.php">Inicio</a></li>
+                      <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" 
+                          href=
+                          <?php
+                            if(isset($usuario)) {
+                              if($type == "admin") {
+                                echo '"indexView.php"';
+                              } else {
+                                echo '"generateView.php"';
+                              }
+                            } else {
+                              echo '"loginView.php"';
+                            }
+                          ?>
+                          >
+                            <?php
+                              if($type == "admin") {
+                                echo 'Administracion';
+                              } else {
+                                echo 'Generador de Citas';
+                              }
+                            ?>
+                          </a></li>
+                      <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="galleryView.php">Galeria</a></li>
+                      <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contactView.php">Acerca de</a></li>
                     </ul>
-                </div>
-            </div>
-        </nav>
+                    <form class="form-inline" method="POST" action="modules/logout.php">
+                    <?php
+                        if(isset($usuario)) {
+                          echo '<button class="btn btn-danger my-2 my-sm-0 btn-sm" style="display: block;" type="submit">LOG OUT</button>';
+                        } else {
+                          echo '<a class="btn btn-success my-2 my-sm-0 btn-sm" href="loginView.php">LOGIN</a>';
+                        }
+                      ?>
+                    </form>
+              </div>
+          </div>
+      </nav>
         <!-- Page Header-->
         <header class="masthead" style="background-image: url('https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="page-heading">
-                            <h1 style="color: #361750;">Trabajos Realizados</h1>
+                            <h1 style="color: #8946a6;">Trabajos Realizados</h1>
                             <span class="subheading">Revisa la experiencia de nuestro servicio</span>
                         </div>
                     </div>
@@ -193,13 +229,13 @@
             <div class="row d-md-flex-row   ">
               <div class="col-md-5 ms-md-0 col-12   d-flex  ">
                 <div class="card p-0   w-100 h-100 text-light shadow-lg  border-0 ">
-                  <img class="card-img h-100 w-100" src="https://scontent-qro1-2.xx.fbcdn.net/v/t39.30808-6/231495502_1760468881007678_2404551926474480141_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=QEJH7pw-7YwAX-y8E4N&tn=dEaJLrJUaRoD50gQ&_nc_ht=scontent-qro1-2.xx&oh=00_AT-JuiUkECgoMDHV6aT-JjD_orTKDq6y9rbK4YHXkh-u3Q&oe=622B29CA" alt="Card image">
+                  <img class="card-img h-100 w-100" src="assets/img/Servicios/Referencias/Vivis.jpeg" alt="Card image">
                   <div class="card-img-overlay p-1 p-md-3    ">
                     <div class="position-relative  w-100 h-25  d-flex">
                       <div class="container-fluid align-self-start   mt-2 mb-2">
                         <div class="row">
                           <div class="col-7 col-md-5">
-                            <h4 class="mt-1 text-white">Vivi Cruz</h4>
+                            <h4 class="mt-1 text-dark">Vivi Cruz</h4>
                           </div>
                           <div class="col-md-7 col-5 text-right">
                             <div class="row align-items-center">
@@ -409,7 +445,7 @@
           <div class="container">
             <div class="row text-center align-items-center">
               <div class="col-12 col-sm-6 col-md-4 text-sm-start">
-                <img alt="image" src="src/LogoIzq.png" height="40">
+                <img alt="image" src="assets/img/LogoIzq.png" height="40">
               </div>
               <div class="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0 text-center text-sm-end text-md-center">
                 © Todos los derechos reservados 2022

@@ -1,3 +1,8 @@
+<?php 
+  include("connect.php");
+  $msj="";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,97 +27,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<style>
-body {
-	font-family: 'Varela Round', sans-serif;
-}
-.modal-confirm {		
-	color: #434e65;
-	width: 525px;
-}
-.modal-confirm .modal-content {
-	padding: 20px;
-	font-size: 16px;
-	border-radius: 5px;
-	border: none;
-}
-.modal-confirm .modal-header {
-	background: #47c9a2;
-	border-bottom: none;   
-	position: relative;
-	text-align: center;
-	margin: -20px -20px 0;
-	border-radius: 5px 5px 0 0;
-	padding: 35px;
-}
-.modal-confirm h4 {
-	text-align: center;
-	font-size: 36px;
-	margin: 10px 0;
-}
-.modal-confirm .form-control, .modal-confirm .btn {
-	min-height: 40px;
-	border-radius: 3px; 
-}
-.modal-confirm .close {
-	position: absolute;
-	top: 15px;
-	right: 15px;
-	color: #fff;
-	text-shadow: none;
-	opacity: 0.5;
-}
-.modal-confirm .close:hover {
-	opacity: 0.8;
-}
-.modal-confirm .icon-box {
-	color: #fff;		
-	width: 95px;
-	height: 95px;
-	display: inline-block;
-	border-radius: 50%;
-	z-index: 9;
-	border: 5px solid #fff;
-	padding: 15px;
-	text-align: center;
-}
-.modal-confirm .icon-box i {
-	font-size: 64px;
-	margin: -4px 0 0 -4px;
-}
-.modal-confirm.modal-dialog {
-	margin-top: 80px;
-}
-.modal-confirm .btn, .modal-confirm .btn:active {
-	color: #fff;
-	border-radius: 4px;
-	background: #eeb711 !important;
-	text-decoration: none;
-	transition: all 0.4s;
-	line-height: normal;
-	border-radius: 30px;
-	margin-top: 10px;
-	padding: 6px 20px;
-	border: none;
-}
-.modal-confirm .btn:hover, .modal-confirm .btn:focus {
-	background: #eda645 !important;
-	outline: none;
-}
-.modal-confirm .btn span {
-	margin: 1px 3px 0;
-	float: left;
-}
-.modal-confirm .btn i {
-	margin-left: 1px;
-	font-size: 20px;
-	float: right;
-}
-.trigger-btn {
-	display: inline-block;
-	margin: 100px auto;
-}
-</style>
+<link rel="stylesheet" href="style.css">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         
@@ -122,11 +37,8 @@ body {
     <body onload="onLoad();">
 
       <script>
-        
-
         function onLoad() {
-          var act = document.getElementById('sign');
-          act.click();
+          habilitar();
         }
         function valiDate() {
           var dia = document.getElementById('slcDia').value, mes = document.getElementById('slcMes').value, ano = 2022;
@@ -216,41 +128,7 @@ body {
                         document.getElementById("verMetodo").value = "Metodo de pago: Otros";
                       }
         }
-
-        function login() {
-        let user = ["loko", "cliente"];
-        let pass = ["loko", "cliente"];
-        let tipo = ["a", "c"]
-          var error = "";
-          var i = 0;
-          var passLogin = document.getElementById("user").value;
-          for (i = 0; i<=user.length-1; i++) {
-            console.log(user[i]);
-            if(user[i] == document.getElementById("user").value) {
-              console.log(user[i] == document.getElementById("user").value);
-              alert("user escrita: "+passLogin);
-              if (pass[i] == passLogin) {
-                //Login dependiendo del tipo de usuario
-                if(tipo[i]=="a") {
-                  alert("Usuario de tipo administrador");
-                  ///document.getElementById("adminModalDef").click;
-                  break;
-                } else {
-                  alert("Usuario de tipo cliente");
-                  habilitar();
-                  break;
-                }
-              } else {
-                error = "Contraseña erronea";
-              }
-            } else {
-              error = "Usuario Inexistente";
-            }
-          }
-          alert(error);
-        }
       </script>
-
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
             <div class="container px-4 px-lg-5">
@@ -287,121 +165,6 @@ body {
         </header>
         <!-- Post Content-->
 
-        <!-- <button onclick="valiDate();" style="display: none;">Fecha</button> -->
-
-
-        <div class="text-center">
-          <!-- Button HTML (to Trigger Modal) -->
-          <button href="#myModal" class="trigger-btn" data-toggle="modal" style="display: none;" id="sign">Se dara click automaticamente</button>
-        </div>
-        
-        <!-- Modal HTML -->
-        <div id="myModal" class="modal fade">
-          <div class="modal-dialog modal-confirm" style="background-color: #fff;">
-            <div class="modal-content">
-              <article class="card-body">
-                <h2 class="card-title text-center mb-4 mt-1 fw-bold">Iniciar Sesion
-                </h2>
-                <hr>
-                <p class="text-success text-center">Inicia sesion para continuar</p>
-                <form>
-                  <div class="form-group">
-                    <div class="input-group mb-3">
-
-                      <span class="input-group-text"> <i class="fa fa-user"></i>
-                      </span><input id="user" class="form-control" placeholder="Email or login" type="text">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="input-group mb-3">
-
-                      <span class="input-group-text"> <i class="fa fa-lock"></i>
-                      </span><input id="password" class="form-control" placeholder="******" type="password">
-                    </div>
-                  </div>
-                  <script>
-                    
-                  </script>
-                  <div class="form-group">
-                    <button href="#myModalAdmin" data-dismiss="modal" class="trigger-btn" data-toggle="modal" style="display: none;" id="adminModal">Se dara click automaticamente</button>
-                    <button href="#myModalAdmin1" data-dismiss="modal" class="trigger-btn" data-toggle="modal" style="display: none;" id="adminModalDef">Se dara click automaticamente</button>
-                    <button onclick="login()" class="btn btn-primary w-100" style="display: block;">
-                      Iniciar Sesionota
-                    </button>
-                  </div>
-                  <p class="text-center">
-                    <a href="#myModalRegister" class="trigger-btn" data-dismiss="modal" data-toggle="modal">Registrarse</a>
-                  </p>
-                </form>
-              </article>
-            </div>
-          </div>
-        </div>    
-
-        <div class="text-center">
-          <!-- Button HTML (to Trigger Modal) -->
-        </div>
-        
-        <!-- Modal HTML -->
-        <div id="myModalAdmin1" class="modal fade">
-          <div class="modal-dialog modal-confirm" style="background-color: #fff;">
-            <div class="modal-content">
-              <article class="card-body">
-                <h2 class="card-title text-center mb-4 mt-1 fw-bold">Modo Administrador
-                </h2>
-                <hr>
-                <p class="text-success text-center">Inicia sesion para continuar</p>
-                <form>
-                 
-                </form>
-              </article>
-            </div>
-          </div>
-        </div>
-        
-        <div class="text-center">
-          <!-- Button HTML (to Trigger Modal) -->
-        </div>
-        
-        <!-- Modal HTML -->
-        <div id="myModalRegister" class="modal fade">
-          <div class="modal-dialog modal-confirm" style="background-color: #fff;">
-            <div class="modal-content">
-              <article class="card-body">
-                <h2 class="card-title fw-bold   mb-4 mt-1">Sign up</h2>
-                <form>
-                  <div class="form-group">
-                    <label>Your name</label>
-                    <input name="" class="form-control mt-2" placeholder="Name" type="text">
-                  </div>
-                  <div class="form-group mt-2">
-                    <label>Your email</label>
-                    <input name="" class="form-control mt-2" placeholder="Email" type="email">
-                  </div>
-                  <div class="form-group mt-2">
-                    <label>New password</label>
-                    <input class="form-control" placeholder="******" type="password">
-                  </div>
-                  <div class="form-group mt-2">
-                    <label>Repeat password</label>
-                    <input class="form-control mt-2" placeholder="******" type="password">
-                  </div>
-                  <div class="form-group mt-2">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" class="  me-2">Subscribe to
-                        updates</label>
-                    </div>
-                  </div>
-                  <div class="form-group mt-3">
-                    <button href="#myModalSucces" data-dismiss="modal" class="btn btn-primary w-100" data-toggle="modal" style="display: block;">Registrar</button>
-                  </div>
-                </form>
-              </article>
-            </div>
-          </div>
-        </div>    
-        
         <!-- Modal HTML -->
         <div id="myModalSucces" class="modal fade">
           <div class="modal-dialog modal-confirm" style="background-color: #fff;">

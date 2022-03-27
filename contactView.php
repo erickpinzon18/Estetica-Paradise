@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  $type = $_SESSION['type'];
+  $usuario = $_SESSION['dev'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,126 +25,66 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<style>
-body {
-	font-family: 'Varela Round', sans-serif;
-}
-.modal-confirm {		
-	color: #434e65;
-	width: 525px;
-}
-.modal-confirm .modal-content {
-	padding: 20px;
-	font-size: 16px;
-	border-radius: 5px;
-	border: none;
-}
-.modal-confirm .modal-header {
-	background: #47c9a2;
-	border-bottom: none;   
-	position: relative;
-	text-align: center;
-	margin: -20px -20px 0;
-	border-radius: 5px 5px 0 0;
-	padding: 35px;
-}
-.modal-confirm h4 {
-	text-align: center;
-	font-size: 36px;
-	margin: 10px 0;
-}
-.modal-confirm .form-control, .modal-confirm .btn {
-	min-height: 40px;
-	border-radius: 3px; 
-}
-.modal-confirm .close {
-	position: absolute;
-	top: 15px;
-	right: 15px;
-	color: #fff;
-	text-shadow: none;
-	opacity: 0.5;
-}
-.modal-confirm .close:hover {
-	opacity: 0.8;
-}
-.modal-confirm .icon-box {
-	color: #fff;		
-	width: 95px;
-	height: 95px;
-	display: inline-block;
-	border-radius: 50%;
-	z-index: 9;
-	border: 5px solid #fff;
-	padding: 15px;
-	text-align: center;
-}
-.modal-confirm .icon-box i {
-	font-size: 64px;
-	margin: -4px 0 0 -4px;
-}
-.modal-confirm.modal-dialog {
-	margin-top: 80px;
-}
-.modal-confirm .btn, .modal-confirm .btn:active {
-	color: #fff;
-	border-radius: 4px;
-	background: #eeb711 !important;
-	text-decoration: none;
-	transition: all 0.4s;
-	line-height: normal;
-	border-radius: 30px;
-	margin-top: 10px;
-	padding: 6px 20px;
-	border: none;
-}
-.modal-confirm .btn:hover, .modal-confirm .btn:focus {
-	background: #eda645 !important;
-	outline: none;
-}
-.modal-confirm .btn span {
-	margin: 1px 3px 0;
-	float: left;
-}
-.modal-confirm .btn i {
-	margin-left: 1px;
-	font-size: 20px;
-	float: right;
-}
-.trigger-btn {
-	display: inline-block;
-	margin: 100px auto;
-}
-</style>
+<link rel="stylesheet" href="css/styles.css">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-            <div class="container px-4 px-lg-5">
-              <img alt="image" src="src/LogoLet.png" height="40">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menú
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">Trabajos Realizados</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Generador de Citas</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Acerca de</a></li>
+          <div class="container px-4 px-lg-5">
+              <img alt="image" src="assets/img/LogoLet.png" height="40">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                  Menú
+                  <i class="fas fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarResponsive">
+                  <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                      <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="indexView.php">Inicio</a></li>
+                      <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" 
+                          href=
+                          <?php
+                            if(isset($usuario)) {
+                              if($type == "admin") {
+                                echo '"indexView.php"';
+                              } else {
+                                echo '"generateView.php"';
+                              }
+                            } else {
+                              echo '"loginView.php"';
+                            }
+                          ?>
+                          >
+                            <?php
+                              if($type == "admin") {
+                                echo 'Administracion';
+                              } else {
+                                echo 'Generador de Citas';
+                              }
+                            ?>
+                          </a></li>
+                      <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="galleryView.php">Galeria</a></li>
+                      <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contactView.php">Acerca de</a></li>
                     </ul>
-                </div>
-            </div>
-        </nav>
+                    <form class="form-inline" method="POST" action="modules/logout.php">
+                    <?php
+                        if(isset($usuario)) {
+                          echo '<button class="btn btn-danger my-2 my-sm-0 btn-sm" style="display: block;" type="submit">LOG OUT</button>';
+                        } else {
+                          echo '<a class="btn btn-success my-2 my-sm-0 btn-sm" href="loginView.php">LOGIN</a>';
+                        }
+                      ?>
+                    </form>
+              </div>
+          </div>
+      </nav>
         <!-- Page Header-->
         <header class="masthead" style="background-image: url('https://images.unsplash.com/uploads/1413222992504f1b734a6/1928e537?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="page-heading" style="color: #933abd;">
-                            <h1>Contacto</h1>
+                        <div class="page-heading">
+                            <h1 style="color: #8946a6;">Contacto</h1>
                             <span class="subheading"  style="color: #ffffff;">Ve un poco sobre la experiencia de la Estilista y la ubicación de el establecimiento</span>
                         </div>
                     </div>
@@ -177,7 +123,7 @@ body {
                         <div class="row d-md-flex-row  overflow-hidden">
                           <div class="col-md-5  p-0 col-12 bg-light d-flex overflow-hidden ">
                             <div class="card p-0   w-100 h-75 text-light   border-0 ">
-                              <img class="card-img h-100 w-100" src="https://scontent-qro1-2.xx.fbcdn.net/v/t39.30808-6/274672526_1593089621064208_785198724545067391_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=174925&_nc_ohc=gztjUA_IQysAX_TmRI0&_nc_ht=scontent-qro1-2.xx&oh=00_AT_bz46R-DSOmlBR4r0JCdioDTulVK8eRjoLYhhBDG5upQ&oe=622AEE8B">
+                              <img class="card-img" height="108%" src="assets/img/Estilista/Estilista.jpeg">
                               <div class="card-img-overlay p-1 p-md-3    ">
                                 <div class="position-relative  w-100 h-25  d-flex">
                                   <div class="container-fluid align-self-start   mt-2 mb-2">
@@ -298,7 +244,7 @@ body {
                             </p>
                             <p class=" mt-5">
                               <strong>Email:</strong>
-                              <a href="">@gmail.com</a>
+                              <a href="">mari.cruz170400@gmail.com</a>
                             </p>
                             <p class=" ">
                               <strong>Phone:</strong>
@@ -333,7 +279,7 @@ body {
                               </div>
                               <div class="row mt-4">
                                 <div class="col">
-                                  <button type="submit" class="btn btn-primary">Enviar</button>
+                                  <button type="submit" style="background-color: #8946a6" class="btn">Enviar</button>
                                 </div>
                               </div>
                             </form>
@@ -348,7 +294,7 @@ body {
           <div class="container">
             <div class="row text-center align-items-center">
               <div class="col-12 col-sm-6 col-md-4 text-sm-start">
-                <img alt="image" src="src/LogoIzq.png" height="40">
+                <img alt="image" src="assets/img/LogoIzq.png" height="40">
               </div>
               <div class="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0 text-center text-sm-end text-md-center">
                 © Todos los derechos reservados 2022
