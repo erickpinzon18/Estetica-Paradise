@@ -27,3 +27,11 @@ window.addEventListener('DOMContentLoaded', () => {
         scrollPos = currentTop;
     });
 })
+
+function eliminarCita() {
+    alert("Eliminar Cita");
+    var ejec = "<?php eliminarCita(";
+    ejec = ejec+document.getElementById('id').value;
+    ejec = ejec+"<?php)?>";
+    document.write(ejec);
+}

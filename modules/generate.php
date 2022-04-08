@@ -127,7 +127,7 @@
             } else {
                // echo "algo malio sal al mmomento de actualizar el numeor de citas;";
             }
-            $consulta = "SELECT nombre, n_Citas, telefono FROM clientes WHERE usuario = '".$usuario."'";
+            $consulta = "SELECT nombre, n_Citas, telefono, correo FROM clientes WHERE usuario = '".$usuario."'";
             //Ejecuta consulta
             $resultado = mysqli_query($con, $consulta);
             if ($fila = mysqli_fetch_assoc($resultado)) {
@@ -150,6 +150,8 @@
                                 <input type="text" name="Metodo" class="form-control" placeholder="Metodo de Pago" value="<?php echo $_POST['slcMetodo']; ?>" required>
                                 <input type="text" name="Citas" class="form-control" placeholder="Numero de Citas" value="<?php echo $Citas; ?>" required>
                                 <!--CAMBIAR ESTO EN POR OTRA RUTA ESTATICA PERO EN WEB-->
+                                <input type="hidden" name="_autoresponse" value="Felicidades, su cita ha sido enviada correctamente, favor de validar sus datos">
+                                <input type="email" name="email" placeholder="Email Address" value="<?php echo $fila['correo']; ?>">
                                 <input type="hidden" name="_next" value="http://localhost:8888/Estetica-Paradise/generateView.php">
                                 <input type="hidden" name="_template" value="table">
                             <br>
@@ -157,7 +159,7 @@
                             </form>
                         </div>
 
-                        <section class="pt-2 pb-2 mt-0 align-items-center d-flex bg-dark" style="min-height: 100vh; background-size: cover; background-image: url(&quot;https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1920&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=c0d43804e2c7c93143fe8ff65398c8e9&quot;);">
+                        <section class="pt-2 pb-2 mt-0 align-items-center d-flex bg-dark" style="min-height: 100vh; background-size: cover; background-image: url(http://fotoram.io/editor/files/2022/04/06/1649259463_74368.jpg);">
                             <div class="container ">
                                 <div class="row  justify-content-center align-items-center d-flex-row text-center h-100">
                                 <div class="col-12 col-md-12 h-50 ">
@@ -165,7 +167,7 @@
                                     <h3 class="fw-bold text-light mb-2 mt-5"> Tu cita fue generada correctamente, porfavor da <br> click en continuar para notificar a la estilista de tu cita
                                     </h3>
                                     <p>
-                                        <button style="background-color: #8946a6" class="btn" onclick="document.getElementById('btnSubmit').click();">Enviar</button>
+                                        <button  style="background-color: #8946a6; color: white;"  class="btn.lg" onclick="document.getElementById('btnSubmit').click();">Enviar</button>
                                     </p>
                                     <div class="btn-container-wrapper p-relative d-block  zindex-1">
                                     </div>
@@ -178,7 +180,7 @@
         }
     } else {
         ?>
-            <section class="pt-2 pb-2 mt-0 align-items-center d-flex bg-dark" style="min-height: 100vh; background-size: cover; background-image: url(&quot;https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1920&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=c0d43804e2c7c93143fe8ff65398c8e9&quot;);">
+            <section class="pt-2 pb-2 mt-0 align-items-center d-flex bg-dark" style="min-height: 100vh; background-size: cover; background-image: url(http://fotoram.io/editor/files/2022/04/06/1649259463_74368.jpg);">
                             <div class="container ">
                                 <div class="row  justify-content-center align-items-center d-flex-row text-center h-100">
                                 <div class="col-12 col-md-12 h-50 ">
@@ -186,7 +188,7 @@
                                     <h3 class="fw-bold text-light mb-2 mt-5"> Lo sentimos, ya hay una cita generada a esa fecha y hora, <br> por favor regresa y selecciona otro horario que se adapte a <br> tus necesidades
                                     </h3>
                                     <p>
-                                        <button type="submit" style="background-color: #8946a6" class="btn" href="../generateView">Enviar</button>
+                                        <button type="submit" style="background-color: #8946a6; color: white;" class="btn-lg" href="../generateView">Enviar</button>
                                     </p>
                                     <div class="btn-container-wrapper p-relative d-block  zindex-1">
                                     </div>
@@ -201,25 +203,24 @@
       
 
 
-      <!-- Footer-->
-      <footer class="pt-4 pb-4 ">
-          <div class="container bg-light">
+<footer class="pt-4 pb-4 ">
+          <div class="container">
             <div class="row text-center align-items-center">
               <div class="col-12 col-sm-6 col-md-4 text-sm-start">
-                <img alt="image" src="../assets/img/LogoIzq.png" height="50">
+                <img alt="image" src="assets/img/LogoIzq.png" height="70">
               </div>
               <div class="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0 text-center text-sm-end text-md-center">
                 © Todos los derechos reservados 2022
               </div>
               <div class="col-12 col-md-4 mt-4 mt-md-0 text-center text-md-end">
                 <a href="https://wa.me/4271171624">
-                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                <img src="https://img.icons8.com/office/64/000000/whatsapp--v1.png"/>
                 </a>&nbsp;&nbsp;
                 <a href="https://www.facebook.com/angeles.cruzz.31704">
-                  <i class="fab fa-facebook" aria-hidden="true"></i>
+                <img src="https://img.icons8.com/color/64/000000/facebook.png"/>                
                 </a>&nbsp;&nbsp;
                 <a href="https://www.instagram.com/angeles.cruz.1317/?hl=es-la">
-                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                  <img src="https://img.icons8.com/fluency/64/000000/instagram-new.png"/>
                 </a>&nbsp;&nbsp;
               </div> 
             </div>

@@ -38,7 +38,7 @@
                           <?php
                             if(isset($usuario)) {
                               if($type == "admin") {
-                                echo '"indexView.php"';
+                                echo '"adminView.php"';
                               } else {
                                 echo '"generateView.php"';
                               }
@@ -76,7 +76,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="page-heading">
-                            <h1 style="color: #8946a6;">Trabajos Realizados</h1>
+                            <h1 style="color: #C085DA;">Trabajos Realizados</h1>
                             <span class="subheading">Revisa la experiencia de nuestro servicio</span>
                         </div>
                     </div>
@@ -96,23 +96,67 @@
                               <div class="row row-grid">
                                 <div class="col-xs-12 col-md-4 my-1">
                                   <figure class="figure">
-                                    <img src=" https://dummyimage.com/400x300/8946a6/ffffff" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                                    <figcaption class="figure-caption">A caption for the above
-                                      image.</figcaption>
+                                    <img src="assets/img/Servicios/Galeria/16.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                    <center>
+                                    <figcaption class="figure-caption">Acabado de uñas esculturales Rojo / Negro</figcaption>
+
+                                    </center>
                                   </figure>
                                 </div>
                                 <div class="col-xs-12 col-md-4 my-1">
                                   <figure class="figure">
-                                    <img src=" https://dummyimage.com/400x300/8946a6/ffffff" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                                    <figcaption class="figure-caption">A caption for the above
-                                      image.</figcaption>
+                                    <img src="assets/img/Servicios/Galeria/13.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                        <center>
+                        <figcaption class="figure-caption">Peinado de Boda</figcaption>
+
+                        </center>
                                   </figure>
                                 </div>
                                 <div class="col-xs-12 col-md-4 my-1">
                                   <figure class="figure">
-                                    <img src=" https://dummyimage.com/400x300/8946a6/ffffff" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                                    <figcaption class="figure-caption">A caption for the above
-                                      image.</figcaption>
+                                    <img src="assets/img/Servicios/Galeria/3.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                          <center>
+                          <figcaption class="figure-caption">Peinado de XV años</figcaption>
+                        
+                          </center>
+                                  </figure>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+
+                      <section class="typography-1">
+                        <div class="photos photos-padding-l" style="">
+                          <div class="photos-overlay" style="background-color:rgba(255,2551,255,0)">
+                            <div class="container">
+                              <div class="row row-grid">
+                                <div class="col-xs-12 col-md-4 my-1">
+                                  <figure class="figure">
+                                    <img src="assets/img/Servicios/Galeria/15.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                    <center>
+                                    <figcaption class="figure-caption" style="">Acabado de uñas acrilico Nego / Blanco</figcaption>
+
+                                    </center>
+                                  </figure>
+                                </div>
+                                <div class="col-xs-12 col-md-4 my-1">
+                                  <figure class="figure">
+                                    <img src="assets/img/Servicios/Galeria/5.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                          <center>
+                          <figcaption class="figure-caption">Acabado de uñas acrilico Nego</figcaption>
+
+                          </center>
+                                  </figure>
+                                </div>
+                                <div class="col-xs-12 col-md-4 my-1">
+                                  <figure class="figure">
+                                    <img src="assets/img/Servicios/Galeria/14.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                        <center>
+                        <figcaption class="figure-caption">Acabado de uñas acrilico Nego / Blanco</figcaption>
+
+                        </center>
                                   </figure>
                                 </div>
                               </div>
@@ -128,23 +172,29 @@
                               <div class="row row-grid">
                                 <div class="col-xs-12 col-md-4 my-1">
                                   <figure class="figure">
-                                    <img src=" https://dummyimage.com/400x300/8946a6/ffffff" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                                    <figcaption class="figure-caption">A caption for the above
-                                      image.</figcaption>
+                                    <img src="assets/img/Servicios/Galeria/1.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                          <center>
+                          <figcaption class="figure-caption">Acabado de uñas acrilico Coral / Beige</figcaption>
+
+                          </center>
                                   </figure>
                                 </div>
                                 <div class="col-xs-12 col-md-4 my-1">
                                   <figure class="figure">
-                                    <img src=" https://dummyimage.com/400x300/8946a6/ffffff" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                                    <figcaption class="figure-caption">A caption for the above
-                                      image.</figcaption>
+                                    <img src="assets/img/Servicios/Galeria/11.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                          <center>
+                          <figcaption class="figure-caption">Decoloración de luces</figcaption>
+
+                          </center>
                                   </figure>
                                 </div>
                                 <div class="col-xs-12 col-md-4 my-1">
                                   <figure class="figure">
-                                    <img src=" https://dummyimage.com/400x300/8946a6/ffffff" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                                    <figcaption class="figure-caption">A caption for the above
-                                      image.</figcaption>
+                                    <img src="assets/img/Servicios/Galeria/9.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                          <center>
+                          <figcaption class="figure-caption">Acabado de uñas acrilico Coral</figcaption>
+
+                          </center>
                                   </figure>
                                 </div>
                               </div>
@@ -160,55 +210,29 @@
                               <div class="row row-grid">
                                 <div class="col-xs-12 col-md-4 my-1">
                                   <figure class="figure">
-                                    <img src=" https://dummyimage.com/400x300/8946a6/ffffff" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                                    <figcaption class="figure-caption">A caption for the above
-                                      image.</figcaption>
-                                  </figure>
-                                </div>
-                                <div class="col-xs-12 col-md-4 my-1">
-                                  <figure class="figure">
-                                    <img src=" https://dummyimage.com/400x300/8946a6/ffffff" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                                    <figcaption class="figure-caption">A caption for the above
-                                      image.</figcaption>
-                                  </figure>
-                                </div>
-                                <div class="col-xs-12 col-md-4 my-1">
-                                  <figure class="figure">
-                                    <img src=" https://dummyimage.com/400x300/8946a6/ffffff" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                                    <figcaption class="figure-caption">A caption for the above
-                                      image.</figcaption>
-                                  </figure>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </section>
+                                    <img src="assets/img/Servicios/Galeria/10.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                        <center>
+                        <figcaption class="figure-caption">Peinado de Fiesta</figcaption>
 
-                      <section class="typography-1">
-                        <div class="photos photos-padding-l" style="">
-                          <div class="photos-overlay" style="background-color:rgba(255,255,255,0)">
-                            <div class="container">
-                              <div class="row row-grid">
-                                <div class="col-xs-12 col-md-4 my-1">
-                                  <figure class="figure">
-                                    <img src=" https://dummyimage.com/400x300/8946a6/ffffff" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                                    <figcaption class="figure-caption">A caption for the above
-                                      image.</figcaption>
+                        </center>
                                   </figure>
                                 </div>
                                 <div class="col-xs-12 col-md-4 my-1">
                                   <figure class="figure">
-                                    <img src=" https://dummyimage.com/400x300/8946a6/ffffff" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                                    <figcaption class="figure-caption">A caption for the above
-                                      image.</figcaption>
+                                    <img src="assets/img/Servicios/Galeria/3.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                        <center>
+                        <figcaption class="figure-caption">Peinado de XV años</figcaption>
+
+                        </center>
                                   </figure>
                                 </div>
                                 <div class="col-xs-12 col-md-4 my-1">
                                   <figure class="figure">
-                                    <img src=" https://dummyimage.com/400x300/8946a6/ffffff" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                                    <figcaption class="figure-caption">A caption for the above
-                                      image.</figcaption>
+                                    <img src="assets/img/Servicios/Galeria/12.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                          <center>
+                          <figcaption class="figure-caption">Permacologia</figcaption>
+
+                          </center>
                                   </figure>
                                 </div>
                               </div>
@@ -251,8 +275,7 @@
                       <div class="container-fluid align-self-center   mt-5 mb-2">
                         <div class="row h-100 align-items-center">
                           <div class="col-12">
-                            <h2 class="   text-end pt-md-2 pt-sm-4 text-white">Muy recomendado
-                              <br>La experiencia fue muy grata y profesional
+                            <h2 class="   text-end pt-md-2 pt-sm-4 text-white">
                             </h2>
                           </div>
                         </div>
@@ -281,11 +304,11 @@
                 <div class="container-fluid w-100">
                   <div class="row">
                     <div class="col col-12 text-center text-md-start">
-                      <h2 class="pt-4 pt-md-0"> Referencias de nuestros clientes</h2>
+                      <h2 class="pt-4 pt-md-0" style="color: #361750;"> Referencias de nuestros clientes</h2>
                       <p class="text-h3">Estos son algunos de nuestros clientes mas frecuentes
-                        y ellos son los mejores para contarte como podemos tratarte y darte todo lo que mereces. 
+                        y ellos son los mejores para contarte como podemos tratarte y darte todo lo que mereces. <br>
                         <br>
-                        <a href="post.html">Agenda tu Cita</a>.
+                        <a href="post.html" class="btn btn-outline-dark">Agenda tu Cita</a>
                       </p>
                     </div>
                   </div>
@@ -307,7 +330,7 @@
                           <div class="row h-100 align-items-center">
                             <div class="col-12">
                               <h3 class="text-white  mt-3 mb-3">
-                                <small> Experiencia muy agradable y buena atencion </small>
+                                <small></small>
                               </h3>
                             </div>
                           </div>
@@ -343,7 +366,7 @@
                           <div class="row h-100 align-items-center">
                             <div class="col-12">
                               <h2 class="text-white  mt-3 mb-3">
-                                <small> Excelente resultado y buena platica </small>
+                                <small> </small>
                               </h2>
                             </div>
                           </div>
@@ -379,7 +402,7 @@
                           <div class="row h-100 align-items-center">
                             <div class="col-12">
                               <h2 class="text-white  mt-3 mb-3">
-                                <small> Me gusto mucho el resultado 100% recomendado </small>
+                                <small> </small>
                               </h2>
                             </div>
                           </div>
@@ -415,7 +438,7 @@
                           <div class="row h-100 align-items-center">
                             <div class="col-12">
                               <h2 class="text-white  mt-3 mb-3">
-                                <small> Buen trato y excelente corte </small>
+                                <small></small>
                               </h2>
                             </div>
                           </div>
@@ -445,25 +468,29 @@
           <div class="container">
             <div class="row text-center align-items-center">
               <div class="col-12 col-sm-6 col-md-4 text-sm-start">
-                <img alt="image" src="assets/img/LogoIzq.png" height="40">
+                <img alt="image" src="assets/img/LogoIzq.png" height="70">
               </div>
               <div class="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0 text-center text-sm-end text-md-center">
                 © Todos los derechos reservados 2022
               </div>
               <div class="col-12 col-md-4 mt-4 mt-md-0 text-center text-md-end">
                 <a href="https://wa.me/4271171624">
-                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                <img src="https://img.icons8.com/office/64/000000/whatsapp--v1.png"/>
                 </a>&nbsp;&nbsp;
                 <a href="https://www.facebook.com/angeles.cruzz.31704">
-                  <i class="fab fa-facebook" aria-hidden="true"></i>
+                <img src="https://img.icons8.com/color/64/000000/facebook.png"/>                
                 </a>&nbsp;&nbsp;
                 <a href="https://www.instagram.com/angeles.cruz.1317/?hl=es-la">
-                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                  <img src="https://img.icons8.com/fluency/64/000000/instagram-new.png"/>
                 </a>&nbsp;&nbsp;
               </div> 
             </div>
           </div>
         </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

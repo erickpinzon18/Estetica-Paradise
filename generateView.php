@@ -4,6 +4,8 @@
   $usuario = $_SESSION['dev'];
 
   if(isset($usuario)) {
+    if($type == "user") {
+
 ?>
 
 <!DOCTYPE html>
@@ -51,6 +53,10 @@
             alert("No hay citas en fines de semana");
             document.getElementById("fech").value = "dd/mm/aaaa";
           }
+
+          const tiempoTranscurrido = Date.now();
+          const hoy = new Date(tempoTranscurrido);
+          alert(tiempoTranscurrido);
         }
         function nameServ() {
           switch(document.getElementById("slcServicio").value) {
@@ -81,7 +87,7 @@
                           <?php
                             if(isset($usuario)) {
                               if($type == "admin") {
-                                echo '"indexView.php"';
+                                echo '"adminView.php"';
                               } else {
                                 echo '"generateView.php"';
                               }
@@ -119,11 +125,13 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="post-heading">
-                            <h1 style="color: #8946a6;">Generador de Citas</h1>
+                            <center>
+                            <h1 style="color: #C085DA;">Generador de Citas</h1>
                             <h2 class="subheading">Agenda tu cita en linea</h2>
-                            <span class="meta">
+                            <span class="lead">
                                 Puedes agendar tu cita para un dia en especifico y sera notificada inmediatamente la estilista
-                            </span>
+                            </span> 
+                            </center>
                         </div>
                     </div>
                 </div>
@@ -142,7 +150,7 @@
                                 <div class="col-md-10">
                                   <img class="ml-md-3 mr-3 mr-md-0 order-1 img-fluid rounded  mb-4" src="assets/img/LogoOG.png" alt="Generic placeholder image">
                                   <h2>Genera tu Cita</h2>
-                                  <p class="lead">Cansado de tener que ir hasta el salon para poder generar tu cita? <br> 
+                                  <p class="lead" >Cansado de tener que ir hasta el salon para poder generar tu cita? <br> 
                                     Genera tu cita ahora con solo unos clicks y programa cuando quieres que sea la cita y la hora.</p>
                                 </div>
                               </div>
@@ -157,15 +165,15 @@
                                       <div>
                                         <h6 class="my-0">Al agendar tu Cita</h6> 
                                         <br>
-                                        <small class="text-muted">-. Rellena tus datos correctamente</small> <br>
-                                        <small class="text-muted">-. Usa datos reales <br>
-                                            -. Selecciona una Hora y Dia que puedas acudir <br>
-                                            -. Seleccione el servicio que ocupes, en caso de que se ocupen distintos crea una cita para la siguiente hora <br><br>
+                                        <small class="text-muted" style="text-align:justify;">1. Rellena tus datos correctamente</small> <br>
+                                        <small class="text-muted" style="text-align:justify;">2. Usa datos reales <br>
+                                            3. Selecciona una Hora y Dia que puedas acudir <br>
+                                            4. Seleccione el servicio que ocupes, en caso de que se ocupen distintos crea una cita para la siguiente hora <br><br>
                                         </small>
                                         <h6 class="my-0">Al momento de tu cita</h6> <br>
-                                        <small class="text-muted">-. Llega 5 minutos antes <br>
-                                          -. Puedes llevar alguna bebida para hidratar <br>
-                                          -. Trata de no llevar acompañantes a menos de que sea muy necesario <br><br>
+                                        <small class="text-muted" style="text-align:justify;">1. Llega 5 minutos antes <br>
+                                          2. Puedes llevar alguna bebida para hidratar <br>
+                                          3. Trata de no llevar acompañantes a menos de que sea muy necesario <br><br>
                                       </small>
                                       </div>
                                     </li>
@@ -190,7 +198,7 @@
                                           </select>
                                         </div>
                                       </div>
-                      
+                                  
                                       <div class="col-md-8">
                                         <input type="text" class="form-text-input" id="servicioNom" name="servicioNom" style="display: none;"> 
 
@@ -240,7 +248,7 @@
                                         </div>
                                       </div>
                                     <hr class="my-4">
-                                    <button type="submit" style="background-color: #8946a6" class="btn w-100" style="display: block;">Generar Cita</button>
+                                    <button type="submit" style="background-color: #8946a6; color: white;" class="btn w-100" style="display: block;">Generar Cita</button>
                                   </div>
                               </div>
                             </div>
@@ -255,20 +263,20 @@
           <div class="container">
             <div class="row text-center align-items-center">
               <div class="col-12 col-sm-6 col-md-4 text-sm-start">
-                <img alt="image" src="assets/img/LogoIzq.png" height="40">
+                <img alt="image" src="assets/img/LogoIzq.png" height="70">
               </div>
               <div class="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0 text-center text-sm-end text-md-center">
                 © Todos los derechos reservados 2022
               </div>
               <div class="col-12 col-md-4 mt-4 mt-md-0 text-center text-md-end">
                 <a href="https://wa.me/4271171624">
-                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                <img src="https://img.icons8.com/office/64/000000/whatsapp--v1.png"/>
                 </a>&nbsp;&nbsp;
                 <a href="https://www.facebook.com/angeles.cruzz.31704">
-                  <i class="fab fa-facebook" aria-hidden="true"></i>
+                <img src="https://img.icons8.com/color/64/000000/facebook.png"/>                
                 </a>&nbsp;&nbsp;
                 <a href="https://www.instagram.com/angeles.cruz.1317/?hl=es-la">
-                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                  <img src="https://img.icons8.com/fluency/64/000000/instagram-new.png"/>
                 </a>&nbsp;&nbsp;
               </div> 
             </div>
@@ -278,10 +286,18 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
     </body>
 </html>
 
 <?php
+    } else {
+      echo 'Solo permitido el acceso a usuario';
+      header("Refresh: 2; URL = indexView.php");
+    }
   } else {
     echo 'Inicia sesion para crear una cita';
     header("Refresh: 2; URL = loginView.php");

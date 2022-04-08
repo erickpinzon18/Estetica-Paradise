@@ -12,9 +12,10 @@
     //Pregunta si devolvio algo
     if($fila = mysqli_fetch_assoc($resultado)) {
         echo "El usuario ya esta siendo utilizado";
+        header("Refresh: 10; URL = login.php");
     } else {
         //Consulta
-        $consulta = "INSERT INTO `clientes` (`usuario`, `nombre`, `telefono`, `fecha`, `password`, `n_Citas`, `genero`, `tipo`) 
+        $consulta = "INSERT INTO `clientes` (`usuario`, `nombre`, `telefono`, `fecha`, `password`, `n_Citas`, `genero`, `tipo`, `correo`) 
                     VALUES ('".$_POST["Rusuario"]."', 
                             '".$_POST["Rnombre"]."', 
                             '".$_POST["Rtel"]."', 
@@ -22,7 +23,9 @@
                             '".$_POST["Rpass"]."', 
                             '0', 
                             '".$_POST["Rgenero"]."', 
-                            '2')";
+                            '2',
+                            '".$_POST["Remail"]."')";
+
         //Ejecuta consulta
         if(!$resultado = mysqli_query($con, $consulta)) {
             echo "Error en la consulta";

@@ -46,7 +46,7 @@
                           <?php
                             if(isset($usuario)) {
                               if($type == "admin") {
-                                echo '"indexView.php"';
+                                echo '"adminView.php"';
                               } else {
                                 echo '"generateView.php"';
                               }
@@ -84,7 +84,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="page-heading">
-                            <h1 style="color: #8946a6;">Contacto</h1>
+                            <h1 style="color: #C085DA;">Contacto</h1>
                             <span class="subheading"  style="color: #ffffff;">Ve un poco sobre la experiencia de la Estilista y la ubicación de el establecimiento</span>
                         </div>
                     </div>
@@ -152,21 +152,23 @@
                                 <div class="position-relative  w-100  h-25 d-flex">
                                   <div class="container-fluid align-self-end  mt-5 mb-2">
                                     <div class="row">
-                                      <div class="col-md-6 col-7">
+                                      <div class="col-md-3 col-7">
                                         <div class=" pt-0 d-inline-block">
                                           <a href="https://www.facebook.com/angeles.cruzz.31704" role="button" class=" btn btn-link me-2">
-                                            <i class="fab fa-facebook fa-lg text-light" aria-hidden="true"></i>
+                                            <i class="fab fa-facebook fa-3x text-light" aria-hidden="true"></i>
                                           </a>
                                           <a href="https://wa.me/4271171624" role="button" class=" btn btn-link me-2">
-                                            <i class="fab fa-whatsapp fa-lg text-light" aria-hidden="true"></i>
+                                            <i class="fab fa-whatsapp fa-3x text-light" aria-hidden="true"></i>
                                           </a>
                                           <a href="https://www.instagram.com/angeles.cruz.1317/?hl=es-la" role="button" class=" btn btn-link me-2">
-                                            <i class="fab fa-instagram fa-lg text-light" aria-hidden="true"></i>
+                                            <i class="fab fa-instagram fa-3x text-light" aria-hidden="true"></i>
                                           </a>
                                         </div>
                                       </div>
-                                      <div class="col-md-6 col-5 text-end">
-                                        <a href="#" class="btn btn-outline-light">Ver mas de Mi</a>
+                                      <div class="col-md-7 col-5 text-end">
+                                      </div>
+                                      <div class="col-md-2 col-5 text-end">
+                                        <a href="#" class="btn btn-outline-light">Ver Mas</a>
                                       </div>
                                     </div>
                                   </div>
@@ -185,7 +187,7 @@
                                         <h2 class="  mb-5 pt-md-2 pt-sm-4" style="color: #4b215e;">Soy una Estilista
                                           <br>Experimentada &amp; Enfocada
                                         </h2>
-                                        <p>Una estilista dedicada a su trabajo, con pasión por lo que hace y profesionalismo en cada uno de sus servicios. <br><br> 
+                                        <p style="text-align: justify;">Una estilista dedicada a su trabajo, con pasión por lo que hace y profesionalismo en cada uno de sus servicios. <br><br> 
                                           Disfruta la compañia de sus seres queridos y realizar el trabajo que le gusta, es una persona con una ambicion de 
                                           crecer y mejorar tanto profesionalmente como personalmente. 
                                         </p>
@@ -228,17 +230,20 @@
                         </div>
                       </div>
                     </section> <br>
-                      
+                    <center><h1 style="color: #361750;">Ubicacion</h1></center><br>
                     <section class="pb-5 pt-0">
                       <grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension>
                       <div class="container-fluid p-0 pb-md-5">
                         <iframe class="map" src="https://maps.google.com/maps?q=20%C2%B027'59.8%22N%2099%C2%B059'10.7%22W&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen=""></iframe>
                       </div>
+                          <center>
+                      <h1 style="color: #361750;">Contactame</h1>
+
+                          </center>
                       <div class="container">
                         <div class="row mt-5">
                           <div class="col-12 col-md-6 col-lg-5">
-                            <h2>Contactame</h2>
-                            <p class=" ">Tienes alguna sugerencia para la pagina, alguna opinion sobre tu servicio
+                            <p style="text-align: justify;">Tienes alguna sugerencia para la pagina, alguna opinion sobre tu servicio
                               o algo que creas que es necesario que sepamos, mandanos un correo rellenando los siguientes
                               datos y con gusto te atenderemos. Si es necesario aqui tienes los siguientes datos de contacto
                             </p>
@@ -279,7 +284,7 @@
                               </div>
                               <div class="row mt-4">
                                 <div class="col">
-                                  <button type="submit" style="background-color: #8946a6" class="btn">Enviar</button>
+                                  <button type="submit"  style="background-color: #8946a6; color: white; width: 100%"  class="btn-lg">Enviar</button>
                                 </div>
                               </div>
                             </form>
@@ -294,25 +299,29 @@
           <div class="container">
             <div class="row text-center align-items-center">
               <div class="col-12 col-sm-6 col-md-4 text-sm-start">
-                <img alt="image" src="assets/img/LogoIzq.png" height="40">
+                <img alt="image" src="assets/img/LogoIzq.png" height="70">
               </div>
               <div class="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0 text-center text-sm-end text-md-center">
                 © Todos los derechos reservados 2022
               </div>
               <div class="col-12 col-md-4 mt-4 mt-md-0 text-center text-md-end">
                 <a href="https://wa.me/4271171624">
-                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                <img src="https://img.icons8.com/office/64/000000/whatsapp--v1.png"/>
                 </a>&nbsp;&nbsp;
                 <a href="https://www.facebook.com/angeles.cruzz.31704">
-                  <i class="fab fa-facebook" aria-hidden="true"></i>
+                <img src="https://img.icons8.com/color/64/000000/facebook.png"/>                
                 </a>&nbsp;&nbsp;
                 <a href="https://www.instagram.com/angeles.cruz.1317/?hl=es-la">
-                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                  <img src="https://img.icons8.com/fluency/64/000000/instagram-new.png"/>
                 </a>&nbsp;&nbsp;
               </div> 
             </div>
           </div>
         </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

@@ -22,6 +22,7 @@
     if ($fila = mysqli_fetch_assoc($resultado)) {
         //Validacion de Contraseña
         if($fila["password"] == $_POST["password"]) {
+          echo $fila["password"];
             //Iniciamos sesion dentro de cookies
             session_start();
             $_SESSION['dev'] = $_POST["user"];
@@ -29,8 +30,8 @@
             //Verificacion de tipo de usuario
             if($fila["tipo"] == 1) {
               $_SESSION['type'] = "admin";
-              echo "<script>alert('Administrador');</script>";
-              header("Refresh: 2; URL = ../indexView.php");
+              echo "Bienvenid@ ".$_POST["user"];
+              header("Refresh: 2; URL = ../adminView.php");
               exit;
             } else {
               $_SESSION['type'] = "user";

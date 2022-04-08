@@ -1,5 +1,5 @@
 <?php
-    include("login.php");
+    include("modules/login.php");
     session_start();
   $type = $_SESSION['type'];
   $usuario = $_SESSION['dev'];
@@ -40,7 +40,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
           <div class="container px-4 px-lg-5">
-              <img alt="image" src="src/LogoLet.png" height="40">
+              <img alt="image" src="assets/img/LogoLet.png" height="40">
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                   Menú
                   <i class="fas fa-bars"></i>
@@ -53,7 +53,7 @@
                           <?php
                             if(isset($usuario)) {
                               if($type == "admin") {
-                                echo '"indexView.php"';
+                                echo '"adminView.php"';
                               } else {
                                 echo '"generateView.php"';
                               }
@@ -97,10 +97,11 @@
                               <div class="col-12 col-md-5 text-center">
                                 <div class="card shadow">
                                 <article class="card-body">
-                                  <h2 class="card-title text-center mb-4 mt-1 fw-bold">Iniciar Sesion
+                                  <img alt="image" src="assets/img/LogoOG.png" height="100">
+                                  <h2 class="card-title text-center mb-4 mt-1 fw-bold" style="color: #361750;">Iniciar Sesion
                                   </h2>
                                   <hr>
-                                  <p class="text-success text-center">Inicia sesion para continuar</p>
+                                  <p class="text-center" style="color: #361750;">Inicia sesion para continuar</p>
                                   <form name="modalLogin" action="modules/login.php" method="POST">
                                     <div class="form-group">
                                       <div class="input-group mb-3">
@@ -122,12 +123,12 @@
                                     <div class="form-group">
                                       <button href="#myModalAdmin" data-dismiss="modal" class="trigger-btn" data-toggle="modal" style="display: none;" id="adminModal">Se dara click automaticamente</button>
                                       <button href="#myModalAdmin1" data-dismiss="modal" class="trigger-btn" data-toggle="modal" style="display: none;" id="adminModalDef">Se dara click automaticamente</button>
-                                      <input type="submit" name="btnLogin" class="btn btn-success w-100" style="backgound-color: #ffffff">
+                                      <input type="submit" name="btnLogin" class="btn-lg w-100"  style="background-color: #8946a6; color: white;">
                                     </div>
                                     <?php
                                         echo $fila["password"];
                                       ?>
-                                      <a href="#myModalRegister" class="trigger-btn" data-toggle="modal">Registrarse</a>
+                                      <a href="#myModalRegister" class="trigger-btn" data-toggle="modal" style="color: #8946a6; font-size: large;">Registrarse</a>
                                   </form>
                                 </article>
                                 </div>
@@ -145,7 +146,7 @@
             <div class="modal-content">
               <article class="card-body">
                 <h2 class="card-title fw-bold   mb-4 mt-1">Sign up</h2>
-                <form name="modalRegister" action="register.php" method="POST">
+                <form name="modalRegister" action="modules/register.php" method="POST">
                 <div class="form-group">
                     <label>Usuario</label>
                     <input name="Rusuario" class="form-control mt-2" placeholder="Usuario" type="text">
@@ -187,8 +188,12 @@
                                           Por favor escoge el genero
                                         </div>
                                       </div>
+                                      <div class="form-group mt-2">
+                    <label>Email</label>
+                    <input id="Remail" class="form-control mt-2" type="text" name="Remail" placeholder="ejemplo@dominio.com">
+                  </div>
                   <div class="form-group mt-3">
-                    <input type="submit" name="btnLogin" class="btn btn-success w-100">
+                    <input type="submit" name="btnLogin" class="w-100" style="background-color: #8946a6; color: white;">
                   </div>
                 </form>
               </article>
@@ -203,20 +208,20 @@
           <div class="container">
             <div class="row text-center align-items-center">
               <div class="col-12 col-sm-6 col-md-4 text-sm-start">
-                <img alt="image" src="src/LogoIzq.png" height="50">
+                <img alt="image" src="assets/img/LogoIzq.png" height="70">
               </div>
               <div class="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0 text-center text-sm-end text-md-center">
                 © Todos los derechos reservados 2022
               </div>
               <div class="col-12 col-md-4 mt-4 mt-md-0 text-center text-md-end">
                 <a href="https://wa.me/4271171624">
-                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                <img src="https://img.icons8.com/office/64/000000/whatsapp--v1.png"/>
                 </a>&nbsp;&nbsp;
                 <a href="https://www.facebook.com/angeles.cruzz.31704">
-                  <i class="fab fa-facebook" aria-hidden="true"></i>
+                <img src="https://img.icons8.com/color/64/000000/facebook.png"/>                
                 </a>&nbsp;&nbsp;
                 <a href="https://www.instagram.com/angeles.cruz.1317/?hl=es-la">
-                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                  <img src="https://img.icons8.com/fluency/64/000000/instagram-new.png"/>
                 </a>&nbsp;&nbsp;
               </div> 
             </div>
